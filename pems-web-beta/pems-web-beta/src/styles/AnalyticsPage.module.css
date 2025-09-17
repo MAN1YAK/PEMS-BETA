@@ -1,0 +1,321 @@
+/* src/styles/AnalyticsPage.module.css */
+.mainContent {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.10s ease-in-out;
+  background-color: #F4FDFF;
+  padding: 1.5rem;
+}
+
+.pageHeader h3 {
+	font-weight: 600;
+	font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+.pageHeader .textMuted {
+    color: #6c757d;
+}
+
+.reportCard {
+	transition: all 0.3s ease;
+  border-radius: 0.375rem;
+}
+
+.reportCard:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dailyCard {
+	border-left-color: #4e73df;
+}
+
+.weeklyCard {
+	border-left-color: #1cc88a;
+}
+
+.insightsCard {
+	border-left-color: #f6c23e;
+}
+
+:global(.nav-pills .nav-link.active) {
+	background-color: #2e59d9 !important;
+    color: white !important;
+}
+:global(.nav-pills .nav-link) {
+    color: #2e59d9;
+}
+:global(.nav-pills .nav-link:not(.active):hover) {
+    color: #1c3fad;
+}
+
+.coopSelect {
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.coopSelect:not(:disabled) {
+  cursor: pointer;
+}
+
+.coopSelect:hover:not(:disabled) {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.coopSelect option[disabled] {
+  cursor: not-allowed;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.sensor-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sensor-btn {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.chartsRow {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px;
+	margin-top: 20px;
+}
+
+.chartWrapper {
+  flex: 1; 
+  max-width: 600px; 
+  width: 100%;     
+  box-sizing: border-box;
+}
+
+.chartContainer,
+.temperatureChartContainer {
+  min-width: 100px;
+	width: 100%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	background: white;
+	border-radius: 8px;
+	margin-bottom: 20px;
+
+  display: flex;       
+  justify-content: center; 
+  align-items: center;
+}
+
+.chartContainer,
+.temperatureChartContainer{
+	width: 100%;
+	height: 300px;
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.chartContainer:hover,
+.temperatureChartContainer:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.chartTitle {
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: #333;
+}
+
+.reportTitleBase {
+  font-weight: 500;
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chartsReportTitle {
+  color-scheme: reportTitleBase;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.chartsReportTitle .spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.chartsReportTitle .bi {
+  color: #1cc88a;
+  font-size: 1.4rem;
+}
+
+.tableReportTitle {
+  color-scheme: reportTitleBase;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.tableReportTitle .spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.tableReportTitle .bi {
+  color: #4e73df;
+  font-size: 1.4rem;
+}
+.tableWrapper {
+  margin-bottom: 3rem;
+}
+
+.annualCard {
+    overflow: hidden;
+}
+
+.annualCard .card-body {
+    padding: 1.25rem;
+}
+
+.tableResponsive {
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e0e5eb;
+}
+
+@media screen and (max-width: 768px) {
+  .tableResponsive {
+    overflow-x: auto;
+  }
+}
+
+.annualTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.annualTable th,
+.annualTable td {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border-color: #e0e5eb;
+    border-style: solid;
+    border-width: 0;
+}
+
+.annualTable thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    border-bottom-width: 2px;
+}
+
+.annualTable th.monthHeader,
+.annualTable th.mainParameterHeader {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.annualTable th.monthHeader {
+    border-right-width: 1px;
+}
+
+.annualTable thead tr:first-child th.mainParameterHeader:not(:first-of-type) {
+     border-left-width: 1px;
+}
+
+.annualTable th.subParameterHeader {
+    background-color: #fff;
+    color: #5a6570;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border-bottom-width: 1px;
+}
+.annualTable thead tr:nth-child(2) th:nth-child(even) {
+    border-left-width: 1px;
+}
+
+.annualTable tbody tr td {
+    border-bottom-width: 1px;
+    color: #5a6570;
+}
+
+.annualTable tbody tr:nth-child(even) {
+    background-color: #fdfdfe;
+}
+.annualTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.annualTable tbody tr:hover {
+    background-color: #eef4fc;
+}
+
+.annualTable tbody td:first-child {
+    font-weight: 500;
+    color: #343a40;
+    text-align: left;
+    padding-left: 1.25rem;
+    border-right-width: 1px;
+}
+
+.annualTable tbody tr td:nth-child(3),
+.annualTable tbody tr td:nth-child(5)
+{
+    border-left-width: 1px;
+}
+.annualTable tbody tr td:nth-child(4)
+{
+     border-left-width: 1px;
+}
+
+.annualTable tbody tr:last-child td {
+    border-bottom-width: 0;
+}
+
+@media screen and (max-width: 900px) {
+	.chartsRow {
+		flex-direction: column;
+		align-items: center;
+	}
+	.chartWrapper {
+		min-width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.chartContainer iframe,
+	.temperatureChartContainer iframe {
+		height: 220px;
+	}
+    .chartContainer, .temperatureChartContainer {
+        padding: 15px;
+    }
+    .annualTable {
+        font-size: 0.8rem;
+    }
+    .annualTable th, .annualTable td {
+        padding: 0.5rem 0.75rem;
+    }
+    .chartsReportTitle, .tableReportTitle {
+        font-size: 1.1rem;
+    }
+}
+
+.currentMonthRow td {
+  background-color: #cde4d0 !important;
+  font-weight: 600;
+}

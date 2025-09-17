@@ -1,0 +1,42 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Import Bootstrap CSS - if you haven't already via a link tag in index.html */
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; Commented out, assuming you load it via index.html */
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #F4FDFF; /* Default background, can be overridden */
+    overflow-x: hidden; /* Prevent horizontal scroll from sidebar transitions */
+}
+
+/* If you are not using a CSS reset, add some basics */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Wrapper for sidebar and main content to flex them */
+/* This would typically be in App.jsx or a Layout component */
+.wrapper {
+    display: flex;
+}
+/* Style for main content area to adjust margin based on sidebar */
+/* These are illustrative; actual implementation is in DashboardPage.jsx using inline styles for margin */
+/*
+.main-content-area {
+    transition: margin-left 0.10s ease-in-out;
+    flex-grow: 1; 
+}
+*/

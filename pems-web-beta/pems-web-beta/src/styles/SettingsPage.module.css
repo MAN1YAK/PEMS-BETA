@@ -1,0 +1,39 @@
+/* src/styles/SettingsPage.module.css */
+  .mainContent {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    transition: margin-left 0.10s ease-in-out;
+    background-color: #F4FDFF;
+    padding: 1.5rem;
+  }
+
+.pageHeader h3 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: #343a40;
+}
+
+.pageHeader .textMuted {
+    color: #6c757d !important;
+    font-size: 1rem;
+}
+
+.formLabel {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #495057;
+}
+
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+}
+
+.sliderContainer span {
+    color: #6c757d;
+    font-size: 0.9rem;
+}

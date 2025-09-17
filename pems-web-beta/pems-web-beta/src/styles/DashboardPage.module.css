@@ -1,0 +1,374 @@
+/* src/styles/DashboardPage.module.css */
+.mainContent {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: filter 0.3s ease-in-out;
+  background-color: #F4FDFF;
+  padding: 20px;
+}
+
+.modalOpenBlur .mainContent,
+.modalOpenBlur :global(#sidebar) {
+  filter: blur(5px);
+}
+
+:global(.modal) {
+  backdrop-filter: none;
+  filter: none !important;
+}
+:global(.modal-backdrop) {
+  filter: none !important;
+}
+
+.pageHeader h3 {
+font-weight: 600;
+font-size: 2rem;
+}
+.pageHeader .textMuted {
+  color: #6c757d !important;
+}
+
+
+.statusCard {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border-left: 5px solid;
+}
+
+.statusSafe {
+  border-left-color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.statusWarning {
+  border-left-color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.statusDanger {
+  border-left-color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+.statusDanger .badge {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.alertCard {
+  border-left: 4px solid #dc3545;
+  border-radius: 0.375rem;
+}
+.monitoringCard {
+border-left: 4px solid #3b7ddd;
+border-radius: 0.375rem;
+}
+
+.healthOverviewCard {
+border-left: 4px solid #a217ff;
+border-radius: 0.375rem;
+}
+
+.alertCard .cardHeader,
+.monitoringCard .cardHeader,
+.healthOverviewCard .cardHeader {
+border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+background-color: white;
+}
+
+.monitoringCard .cardHeader h5 i {
+  color: #3b7ddd !important;
+  font-size: 1.5rem;
+}
+
+.alertCard .cardHeader h5 i {
+  color: #dc3545 !important;
+  font-size: 1.5rem;
+}
+
+.healthOverviewCard .cardHeader h5 i {
+  color: #a217ff !important;
+  font-size: 1.5rem;
+}
+
+.miniGraph {
+  height: 60px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.quickActionBtn {
+  transition: all 0.2s ease;
+}
+.quickActionBtn:hover {
+  transform: translateY(-3px);
+}
+
+.coopStatusTable thead th:nth-child(n+2),
+.coopStatusTable tbody td:nth-child(n+2) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.coopStatusTable thead th:first-child,
+.coopStatusTable tbody td:first-child {
+  vertical-align: middle;
+}
+
+.clickableCoopRow {
+  cursor: pointer;
+}
+.clickableCoopRow:hover {
+  background-color: #e9ecef;
+}
+
+.nonClickableCoopRow {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.nonClickableCoopRow:hover {
+  background-color: inherit;
+}
+
+
+.activeCoopRow {
+  background-color: #d6eaff !important;
+  font-weight: 600;
+  color: #084298;
+}
+
+.activeCoopRow td:first-child::before {
+  content: "▶ ";
+  color: #0d6efd;
+  font-size: 0.8em;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+
+.statCard {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.statCardAmmoniaHigh { background: #C8E6C9; border-left: 4px solid #388E3C; color: #1B5E20; }
+.statCardAmmoniaLow { background: #E3F9E5; border-left: 4px solid #4CAF50; color: #2E7D32; }
+.statCardTempHigh { background: #FFE0B2; border-left: 4px solid #FB8C00; color: #BF360C; }
+.statCardTempLow { background: #FFECB3; border-left: 4px solid #FFA000; color: #E65100; }
+
+
+.statCardIcon {
+  font-size: 2.5rem;
+  opacity: 0.3;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.readingSubtitle {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.chartWrapper {
+flex: 1;
+min-width: 400px;
+max-width: 500px;
+}
+
+.chartContainer,
+.temperatureChartContainer {
+width: 100%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 30px;
+background: white;
+border-radius: 1.5%;
+margin-bottom: 20px;
+}
+
+.chartTitle {
+text-align: center;
+margin-bottom: 15px;
+font-size: 1.3rem;
+font-weight: 600;
+color: #333;
+}
+
+.coopSelect {
+  transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.coopSelect:not(:disabled) {
+  cursor: pointer;
+}
+
+.coopSelect:hover:not(:disabled) {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.coopSelect option[disabled] {
+  cursor: not-allowed;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.deviceStatusIndicator {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: #f8f9fa;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.deviceStatusIndicator i {
+  font-size: 1.3rem;
+}
+
+.deviceStatusIndicator:global(.text-primary) {
+  border-color: rgba(13, 110, 253, 0.4);
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.deviceStatusIndicator:global(.text-success) {
+  border-color: rgba(28, 132, 80, 0.4);
+  background-color: rgba(28, 132, 80, 0.1);
+}
+
+.deviceStatusIndicator:global(.text-warning) {
+  color: #ff9100 !important;
+  border-color: #ffce3b;
+  background-color: #ffeeb6;
+}
+
+.deviceStatusIndicator:global(.text-danger) {
+  border-color: rgba(220, 53, 69, 0.4);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.deviceStatusIndicator:global(.text-muted),
+.deviceStatusIndicator:global(.text-secondary) {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+
+.alertsTable {
+  vertical-align: middle;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.alertsTable thead th {
+  font-weight: 600;
+  color: #495057;
+  background-color: #fff5f5;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.alertsTable tbody td {
+    vertical-align: middle;
+}
+
+.alertTimeBadge {
+  padding: 0.5em 0.8em;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 15px;
+  }
+  .headerActions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .headerActions .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .headerActions .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .alertCard {
+    overflow: hidden;
+  }
+  .alertCard .cardHeader,
+  .alertCard .cardBody {
+    padding: 1rem;
+  }
+  
+  .alertsTable, .coopStatusTable {
+    font-size: 0.8rem;
+  }
+
+  #viewAllAlertsBtn {
+    white-space: nowrap;
+  }
+
+    .cardBody {
+        padding: 1rem;
+    }
+    .statCardRow {
+        flex-direction: column;
+    }
+    .statCardCol {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .pageHeaderContainer {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+    .coopStatusTable {
+        font-size: 0.85rem;
+    }
+    .chartWrapper {
+        min-width: 100%;
+        padding: 0 10px;
+    }
+    .chartContainer, .temperatureChartContainer {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+  .pageHeader h3 {
+    font-size: 1.3rem;
+  }
+  .cardTitle {
+    font-size: 1rem;
+  }
+  .currentReading {
+    font-size: 1.5rem;
+  }
+
+  .alertCard .cardHeader {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+  .alertCard .cardHeader h5 {
+    font-size: 1rem;
+  }
+  .alertCard .cardHeader small {
+    font-size: 0.7rem;
+  }
+}
+
+.loadingSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}

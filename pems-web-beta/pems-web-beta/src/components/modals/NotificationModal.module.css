@@ -1,0 +1,141 @@
+/* src/components/modals/NotificationModal.module.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2050;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.modalContent {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 480px;
+  border-top: 6px solid;
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalContent.success { border-top-color: #28a745; }
+.modalContent.error { border-top-color: #dc3545; }
+.modalContent.warning { border-top-color: #ffc107; }
+.modalContent.info { border-top-color: #17a2b8; }
+
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modalTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 0.75rem;
+  flex-grow: 1;
+  color: #343a40;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #6c757d;
+  opacity: 0.7;
+  padding: 0.2rem 0.4rem;
+}
+.closeButton:hover {
+  color: #343a40;
+  opacity: 1;
+}
+
+.modalBody {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #495057;
+  word-wrap: break-word;
+}
+
+.modalBody p {
+  margin-bottom: 0;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnOk {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btnOk-success { background-color: #28a745; }
+.btnOk-success:hover { background-color: #218838; }
+
+.btnOk-error { background-color: #dc3545; }
+.btnOk-error:hover { background-color: #c82333; }
+
+.btnOk-warning { background-color: #ffc107; color: #212529; }
+.btnOk-warning:hover { background-color: #e0a800; }
+
+.btnOk-info { background-color: #17a2b8; }
+.btnOk-info:hover { background-color: #138496; }
+
+
+.iconSuccess, .iconError, .iconWarning, .iconInfo {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+.iconSuccess { color: #28a745; }
+.iconError { color: #dc3545; }
+.iconWarning { color: #ffc107; }
+.iconInfo { color: #17a2b8; }
+
+
+@media (max-width: 576px) {
+  .modalContent {
+    max-width: 95%;
+    padding: 20px;
+  }
+  .modalTitle {
+    font-size: 1.1rem;
+  }
+  .modalBody {
+    font-size: 0.95rem;
+  }
+  .btnOk {
+    padding: 0.4rem 1rem;
+  }
+}

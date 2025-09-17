@@ -1,0 +1,38 @@
+/* src/components/modals/AllAlertsModals.module.css */
+
+/* Styles for the list items inside the modal */
+.listGroupItem {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.clickableListGroupItem {
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.clickableListGroupItem:hover {
+  background-color: #f8f9fa; /* A very light grey */
+}
+
+.alertMessage {
+  transition: color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
+}
+
+.clickableListGroupItem:hover .alertMessage {
+  color: #0a58ca; /* Bootstrap link hover color */
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .listGroupItem {
+    padding: 0.75rem 1rem !important;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .alertMessage {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,165 @@
+/* src/components/modals/ChannelDetailsModal.module.css */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 15px;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 550px;
+  animation: fadeInScale 0.3s ease-out;
+  border-top: 5px solid #6c757d;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  color: #343a40;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #6c757d;
+  opacity: 0.8;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  color: #000;
+  opacity: 1;
+}
+
+.modalBody {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  color: #495057;
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+.detailRow:last-child {
+  border-bottom: none;
+}
+.detailRow strong {
+  font-weight: 600;
+  color: #495057;
+}
+
+.sensitiveValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.valueText {
+  word-break: break-all;
+}
+
+.eyeIcon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #0d6efd;
+  margin-left: 1rem;
+}
+.eyeIcon:hover {
+  color: #0a58ca;
+}
+
+.divider {
+    margin: 1rem 0;
+    border-color: #dee2e6;
+}
+
+.modalActions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnClose {
+  background-color: #6c757d;
+  color: white;
+  border-color: #6c757d;
+}
+.btnClose:hover:not(:disabled) {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+@media (max-width: 576px) {
+  .modalContent {
+      max-width: 95%;
+      padding: 20px;
+  }
+  .detailRow {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+  .modalTitle {
+      font-size: 1.1rem;
+  }
+}
