@@ -67,7 +67,7 @@ function LoginPage() {
     <>
       <div className={styles.loginContainer}>
         <img src={logo} alt="Logo" className={styles.enhancedLogo} />
-        <h1>PEMS<span style={{ color: '#a2e089' }}>.</span></h1>
+        <h1>PEMSs<span style={{ color: '#a2e089' }}>.</span></h1>
         <p>Poultry Environment Monitoring System</p>
 
         <div
