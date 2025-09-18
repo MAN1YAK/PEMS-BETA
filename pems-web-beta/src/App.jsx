@@ -1,5 +1,6 @@
 // src/App.jsx
 import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -18,6 +19,21 @@ const ProtectedRoute = () => {
 
 // Main application component with routing.
 function App() {
+    useEffect(() => {
+    const syncLogout = (event) => {
+      if (event.key === "logout") {
+        // This tab should logout as well
+        localStorage.removeItem("loggedInUserEmail");
+        window.location.href = "/login";
+      }
+    };
+
+    window.addEventListener("storage", syncLogout);
+    return () => {
+      window.removeEventListener("storage", syncLogout);
+    };
+  }, []);
+  
   return (
     <Router>
       <Routes>
