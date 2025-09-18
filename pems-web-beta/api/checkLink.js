@@ -6,9 +6,10 @@ export default async function handler(req, res) {
   if (!url) return res.status(400).json({ ok: false, message: "Missing url" });
 
   try {
-    // Use HEAD to check if the link exists (faster than GET)
-    const response = await fetch(url, { method: "HEAD" });
+    // Use GET instead of HEAD for Google Drive links
+    const response = await fetch(url, { method: "GET" });
 
+    // If status is 200-299, assume valid
     if (response.ok) {
       res.status(200).json({ ok: true });
     } else {
