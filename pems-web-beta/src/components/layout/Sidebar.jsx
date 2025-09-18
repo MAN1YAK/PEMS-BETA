@@ -20,22 +20,26 @@ const Sidebar = ({ isExpanded, toggleSidebar }) => {
     }
   };
 
-  const handleExternalLink = async (url) => {
-    try {
-      const response = await fetch(`/api/checkLink?url=${encodeURIComponent(url)}`);
-      const data = await response.json();
+    /* Google Drive URLs cannot reliably be pre-checked from a serverless function without using the official Google Drive API
+       Test again when Link is changed to github instead
+    const handleExternalLink = async (url) => {
+      try {
+        const response = await fetch(`/api/checkLink?url=${encodeURIComponent(url)}`);
+        const data = await response.json();
 
-      if (data.ok) {
-        window.open(url, "_blank", "noopener,noreferrer");
-      } else {
-        alert("The link is broken (404).");
+        if (data.ok) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        } else {
+          alert("The link is broken (404).");
+        }
+      } catch (error) {
+        console.error("Error checking link:", error);
+        alert("Failed to check the link. Please try again later.");
       }
-    } catch (error) {
-      console.error("Error checking link:", error);
-      alert("Failed to check the link. Please try again later.");
-    }
-  };
-  
+    };
+    */
+ 
+
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -75,27 +79,9 @@ const Sidebar = ({ isExpanded, toggleSidebar }) => {
           </Link>
         </li>
         <li className={`${styles.sidebarItem} ${styles.utilitySectionStart}`}>
-          <button
-            type="button"
-            onClick={() =>
-              handleExternalLink("https://drive.google.com/uc?export=download&id=1h3yHmfR0RReGBxn3yEvDB_eTFn_dfTzJ")
-            }
-            className={styles.sidebarLink}
-          >
+          <a href="https://drive.google.com/uc?export=download&id=1h3yHmfR0RReGBxn3yEvDB_eTFn_dfTzJ" className={styles.sidebarLink} target="_blank" rel="noopener noreferrer">
             <i className="bi bi-phone-fill"></i><span>Download App</span>
-          </button>
-        </li>
-
-        <li className={`${styles.sidebarItem}`}>
-          <button
-            type="button"
-            onClick={() =>
-              handleExternalLink("https://drive.google.com/uc?export=download&id=1h3yHmfR0RReGBxn3yEvDB_eTFn_dfTzJasddsa")
-            }
-            className={styles.sidebarLink}
-          >
-            <i className="bi bi-phone-fill"></i><span>Download App Broken</span>
-          </button>
+          </a>
         </li>
         <li className={`${styles.sidebarItem} ${isActive('/settings') ? styles.active : ''}`}>
           <Link to="/settings" className={styles.sidebarLink}>
