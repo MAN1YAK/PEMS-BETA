@@ -15,7 +15,24 @@
         },
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://pems-web.vercel.app"
+          "value": "https://pems-beta.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://pems-beta.vercel.app"
         },
         {
           "key": "Access-Control-Allow-Methods",
